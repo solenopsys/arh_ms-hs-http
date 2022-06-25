@@ -6,7 +6,7 @@ FROM golang:1.18.2-alpine3.15
 WORKDIR /app
 
 COPY http-adapter/go.mod ./main/
-#COPY go.sum ./main/
+COPY go.sum ./main/
 
 COPY zmq_connector/go.mod ./zmq_connector/
 
