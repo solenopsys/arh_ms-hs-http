@@ -21,6 +21,6 @@ WORKDIR /app
 COPY zmq_connector/*.go ./zmq_connector/
 
 WORKDIR /app/main
-RUN go build  -o /hStream-dgraph
+RUN go build  -o /go-binary
 
-CMD [ "/hStream-dgraph" ]
+CMD [ "/go-binary" ]
