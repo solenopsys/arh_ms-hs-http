@@ -2,11 +2,9 @@ module solenopsys.org/zmq_clickhouse
 
 go 1.17
 
-replace solenopsys.org/zmq_connector v0.0.0 => ../zmq_connector
+replace solenopsys.org/zmq_connector v0.0.0 => ./zmq_connector
 
-require (
-	solenopsys.org/zmq_connector v0.0.0
-)
+require solenopsys.org/zmq_connector v0.0.0
 
 require (
 	github.com/go-zeromq/goczmq/v4 v4.2.2 // indirect
