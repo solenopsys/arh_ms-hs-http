@@ -24,7 +24,7 @@ func execPost(client http.Client, path string, message []byte) (*http.Response, 
 	return client.Post(path, contentType, r)
 }
 
-func processingFunction() func(message []byte, streamId uint32, serviceId uint16, functionId uint16) []byte { //todo передалать на grpc
+func processingFunction() func(message []byte, functionId uint8) []byte {
 	host := os.Getenv("http.Host")
 	port := os.Getenv("http.Port")
 	uri := os.Getenv("http.URI")
@@ -37,11 +37,11 @@ func processingFunction() func(message []byte, streamId uint32, serviceId uint16
 		Timeout: 5 * time.Second,
 	}
 
-	var functions = make(map[uint16]ProcessingFunc)
+	var functions = make(map[uint8]ProcessingFunc)
 	functions[1] = execGet
 	functions[2] = execPost
 
-	return func(message []byte, streamId uint32, serviceId uint16, functionId uint16) []byte {
+	return func(message []byte, functionId uint8) []byte {
 		s := string(message)
 		println("INPUT MESSAGE", s)
 
