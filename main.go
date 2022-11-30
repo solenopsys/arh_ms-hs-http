@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"os"
 	"solenopsys.org/zmq_connector"
+
 	"time"
 )
 
@@ -65,5 +66,8 @@ func processingFunction() func(message []byte, functionId uint8) []byte {
 }
 
 func main() {
-	zmq_connector.StartServer(processingFunction())
+
+	template := zmq_connector.HsTemplate{Pf: processingFunction()}
+	template.Init()
+
 }
