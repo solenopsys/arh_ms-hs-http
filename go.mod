@@ -1,4 +1,4 @@
-module zmq_http-adapter
+module solenopsys.org/zmq-http-adapter
 
 go 1.19
 
