@@ -2,13 +2,12 @@ package main
 
 import (
 	"bytes"
+	zmq_connector "github.com/solenopsys/sc-bl-zmq-connector"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
-	"solenopsys.org/zmq_connector"
-
 	"time"
 )
 
