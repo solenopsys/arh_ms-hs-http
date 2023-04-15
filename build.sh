@@ -5,7 +5,7 @@ build_push(){
 }
 
 
-REGISTRY=registry.alexstorm.solenopsys.org
+REGISTRY=registry.klogsolenopsys.org
 NAME=alexstorm-hsm-http-adapter
 ARCHS="linux/amd64,linux/arm64"
 
