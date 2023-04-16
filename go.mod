@@ -1,6 +1,6 @@
 module solenopsys.org/zmq-http-adapter
 
-go 1.19
+go 1.20.3
 
 require github.com/solenopsys/sc-bl-zmq-connector v1.0.2
 
