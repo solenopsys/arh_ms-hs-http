@@ -1,4 +1,4 @@
-#HyperStreams http adapter module for SoftConverged
+#HyperStreams http adapter module for Converged
 
 ## Docker
 docker build . -t registry.local/hs-http-adapter:latest
