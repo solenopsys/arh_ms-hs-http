@@ -1,16 +1,18 @@
 
+FROM --platform=$BUILDPLATFORM  golang:buster
 
-FROM golang:1.18.2-alpine3.15
+ARG TARGETARCH
 
-WORKDIR /app/main/zmq_connector
-
-WORKDIR /app/main
+WORKDIR /app
 COPY go.mod ./
 COPY go.sum ./
 COPY *.go ./
+
 RUN go mod download
 
-RUN go build  -o /go-binary
+COPY cmd ./cmd
+
+RUN GOOS=linux GOARCH=$TARGETARCH go build -o /go-binary  /app/cmd/main.go
 
 CMD [ "/go-binary" ]
 
